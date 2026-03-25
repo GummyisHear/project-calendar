@@ -1,132 +1,193 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="et">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Custom Calendars in MS Project</title>
+  <title>Kohandatud kalender MS Projectis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <div class="scanline"></div>
+
   <header>
-    <p class="eyebrow">MS Project Guide</p>
-    <h1>How to Create and Apply a Custom Calendar</h1>
-    <p class="subtitle">Change working hours for your entire project — step by step.</p>
+    <div class="header-meta">
+      <span class="tag"># ms-project</span>
+      <span class="tag"># juhend</span>
+      <span class="tag"># kalender</span>
+    </div>
+    <h1>Kohandatud kalender<br><span class="accent">MS Projectis</span></h1>
+    <p class="subtitle">Kuidas luua ja rakendada kohandatud tööajakalendrit — samm-sammult.</p>
+    <div class="header-bar">
+      <span>7 sammu</span>
+      <span class="dot"></span>
+      <span>~5 min</span>
+      <span class="dot"></span>
+      <span>MS Project 2019+</span>
+    </div>
   </header>
 
   <main>
 
     <section class="intro">
-      <p>By default, MS Project schedules tasks using the <strong>Standard calendar</strong> — working hours from 8:00 to 17:00. If your project runs on different hours (an afternoon shift, a night shift, or a weekend schedule), you need to create a <strong>custom base calendar</strong> and apply it to the project. This guide walks through the full process.</p>
+      <div class="terminal-label">// sissejuhatus</div>
+      <p>Vaikimisi kasutab MS Project <strong>standardkalendrit</strong> — tööaeg kell 08:00–17:00. Kui sinu projekt töötab muudel kellaaegadel (nt pärastlõunane vahetus, öövahetus), tuleb luua <strong>kohandatud baasikaender</strong> ja rakendada see projektile. See juhend viib sind läbi kogu protsessi.</p>
     </section>
 
-    <!-- STEP 1 -->
-    <section class="step">
-      <div class="step-header">
-        <span class="step-number">1</span>
-        <h2>Open Change Working Time</h2>
+    <!-- SAMM 1 -->
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">01</span>
+        <div class="step-line"></div>
       </div>
-      <p>Go to the <strong>Project</strong> tab in the ribbon and click <strong>Change Working Time</strong>.</p>
-      <div class="screenshot-placeholder">
-        📷 Screenshot: Project tab → Change Working Time button highlighted
+      <div class="step-content">
+        <h2>Ava „Muuda tööaega"</h2>
+        <p>Mine lindi ülaosas <strong>Projekt</strong>-vahekaardile ja klõpsa <strong>Muuda tööaega</strong> (<em>Change Working Time</em>).</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// pilt_01.png</span>
+          <p>📷 Kuvatõmmis: Projekt-vahekaart → Muuda tööaega nupp esile tõstetud</p>
+        </div>
       </div>
-    </section>
+    </article>
 
-    <!-- STEP 2 -->
-    <section class="step">
-      <div class="step-header">
-        <span class="step-number">2</span>
-        <h2>Create a new calendar</h2>
+    <!-- SAMM 2 -->
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">02</span>
+        <div class="step-line"></div>
       </div>
-      <p>In the dialog that opens, click <strong>Create New Calendar</strong>. Give it a clear name (e.g. <em>Afternoon Shift</em>) and choose <strong>Make a copy of Standard calendar</strong> so the base settings carry over.</p>
-      <div class="screenshot-placeholder">
-        📷 Screenshot: "Create New Calendar" dialog with name filled in
+      <div class="step-content">
+        <h2>Loo uus kalender</h2>
+        <p>Avanenud dialoogis klõpsa <strong>Loo uus kalender</strong> (<em>Create New Calendar</em>). Anna sellele selge nimi, nt <code>Pärastlõunane vahetus</code>, ja vali <strong>Koopia standardkalendrist</strong>, et põhiseaded säiliksid.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// pilt_02.png</span>
+          <p>📷 Kuvatõmmis: „Loo uus kalender" dialoog nimega täidetuna</p>
+        </div>
       </div>
-    </section>
+    </article>
 
-    <!-- STEP 3 -->
-    <section class="step">
-      <div class="step-header">
-        <span class="step-number">3</span>
-        <h2>Set your working hours</h2>
+    <!-- SAMM 3 -->
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">03</span>
+        <div class="step-line"></div>
       </div>
-      <p>Still in the Change Working Time dialog, click the <strong>Work Weeks</strong> tab → select the default row → click <strong>Details</strong>. Select all working days (Monday through Friday), choose <strong>Set day(s) to these specific working times</strong>, and enter your hours — for example <strong>14:00 to 18:00</strong>. Click OK.</p>
-      <div class="screenshot-placeholder">
-        📷 Screenshot: Work Weeks → Details dialog with custom hours entered
+      <div class="step-content">
+        <h2>Määra tööajad</h2>
+        <p>Samas dialoogis klõpsa vahekaarti <strong>Töönädalad</strong> (<em>Work Weeks</em>) → vali vaikimisi rida → klõpsa <strong>Üksikasjad</strong> (<em>Details</em>). Vali kõik tööpäevad (E–R), vali <strong>Määra kindlad tööajad</strong> ja sisesta oma kellaaeg — nt <code>14:00 – 18:00</code>. Klõpsa OK.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// pilt_03.png</span>
+          <p>📷 Kuvatõmmis: Töönädalad → Üksikasjad dialoog kohandatud tundidega</p>
+        </div>
       </div>
-    </section>
+    </article>
 
-    <!-- STEP 4 -->
-    <section class="step">
-      <div class="step-header">
-        <span class="step-number">4</span>
-        <h2>Apply the calendar to the project</h2>
+    <!-- SAMM 4 -->
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">04</span>
+        <div class="step-line"></div>
       </div>
-      <p>Go to <strong>Project</strong> tab → <strong>Project Information</strong>. In the <strong>Calendar</strong> dropdown, select your new calendar. Click OK.</p>
-      <div class="screenshot-placeholder">
-        📷 Screenshot: Project Information dialog with custom calendar selected in dropdown
+      <div class="step-content">
+        <h2>Rakenda kalender projektile</h2>
+        <p>Mine <strong>Projekt</strong>-vahekaardile → <strong>Projekti teave</strong> (<em>Project Information</em>). Leia <strong>Kalender</strong>-rippmenüü ja vali oma uus kalender. Klõpsa OK.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// pilt_04.png</span>
+          <p>📷 Kuvatõmmis: Projekti teave dialoog, valitud kohandatud kalender</p>
+        </div>
       </div>
-    </section>
+    </article>
 
-    <!-- STEP 5 -->
-    <section class="step">
-      <div class="step-header">
-        <span class="step-number">5</span>
-        <h2>Set the default start time</h2>
+    <!-- SAMM 5 -->
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">05</span>
+        <div class="step-line"></div>
       </div>
-      <p>Go to <strong>File</strong> → <strong>Options</strong> → <strong>Schedule</strong>. Change <strong>Default start time</strong> to match your calendar (e.g. <strong>14:00</strong>). This must match the calendar or tasks may not align correctly.</p>
-      <div class="screenshot-placeholder">
-        📷 Screenshot: File → Options → Schedule tab with Default start time set to 14:00
+      <div class="step-content">
+        <h2>Määra vaikimisi algusaeg</h2>
+        <p>Mine <strong>Fail</strong> → <strong>Suvandid</strong> → <strong>Ajakava</strong> (<em>Schedule</em>). Muuda <strong>Vaikimisi algusaeg</strong> vastavaks — nt <code>14:00</code>. See peab ühtima sinu kalendriga, muidu ülesanded ei joandu õigesti.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// pilt_05.png</span>
+          <p>📷 Kuvatõmmis: Fail → Suvandid → Ajakava, vaikimisi algusaeg 14:00</p>
+        </div>
       </div>
-    </section>
+    </article>
 
-    <!-- STEP 6 -->
-    <section class="step">
-      <div class="step-header">
-        <span class="step-number">6</span>
-        <h2>Switch all tasks to Auto Scheduled</h2>
+    <!-- SAMM 6 -->
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">06</span>
+        <div class="step-line"></div>
       </div>
-      <p>This is the most common reason the calendar seems to have no effect. Select all tasks (<strong>Ctrl + A</strong>), then go to the <strong>Task</strong> tab and click <strong>Auto Schedule</strong>. Check the bottom status bar — it should say <em>"New Tasks: Auto Scheduled"</em>.</p>
-      <div class="screenshot-placeholder">
-        📷 Screenshot: Task tab → Auto Schedule button, and status bar showing "Auto Scheduled"
+      <div class="step-content">
+        <h2>Lülita ülesanded automaatsele ajastamisele</h2>
+        <p>See on kõige levinum põhjus, miks kalender ei toimi. Vali kõik ülesanded (<strong>Ctrl + A</strong>), mine <strong>Ülesanne</strong>-vahekaardile ja klõpsa <strong>Automaatne ajakava</strong> (<em>Auto Schedule</em>). Kontrolli alloleva olekuriba — seal peaks seisma <em>„Uued ülesanded: automaatne ajakava"</em>.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// pilt_06.png</span>
+          <p>📷 Kuvatõmmis: Ülesanne → Auto Schedule nupp + olekuriba „Auto Scheduled"</p>
+        </div>
+        <div class="callout warning">
+          <span class="callout-icon">⚠</span>
+          <div>
+            <strong>Levinud lõks:</strong> Kui olekuribal on kirjas <code>Käsitsi ajastatud</code>, ignoreerivad ülesanded täielikult kalendrit, piiranguid ja sõltuvusi. Auto Schedule peab olema aktiivne.
+          </div>
+        </div>
       </div>
-      <div class="callout warning">
-        <strong>⚠ Common pitfall:</strong> If the status bar says <em>"Manually Scheduled"</em>, the tasks ignore all calendar and constraint logic entirely. Auto Schedule must be active for the calendar to take effect.
-      </div>
-    </section>
+    </article>
 
-    <!-- STEP 7 -->
-    <section class="step">
-      <div class="step-header">
-        <span class="step-number">7</span>
-        <h2>Recalculate the schedule</h2>
+    <!-- SAMM 7 -->
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">07</span>
+        <div class="step-line"></div>
       </div>
-      <p>Press <strong>F9</strong> or go to <strong>Project</strong> → <strong>Calculate Project</strong>. All tasks will be rescheduled according to the new calendar. Your tasks that previously started at 08:00 will now start at 14:00.</p>
-      <div class="screenshot-placeholder">
-        📷 Screenshot: Project tab → Calculate Project button, and Gantt chart showing updated start times
+      <div class="step-content">
+        <h2>Arvuta ajakava uuesti</h2>
+        <p>Vajuta <strong>F9</strong> või mine <strong>Projekt</strong> → <strong>Arvuta projekt</strong> (<em>Calculate Project</em>). Kõik ülesanded arvutatakse ümber vastavalt uuele kalendrile — nt 08:00 asemel algavad ülesanded nüüd 14:00-st.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// pilt_07.png</span>
+          <p>📷 Kuvatõmmis: Gantti diagramm uuendatud algusaegadega</p>
+        </div>
+        <div class="callout tip">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>Ikka ei uuene?</strong> Mine <strong>Projekti teave</strong>, muuda projekti alguskuupäeva millekski muuks → OK, seejärel pane õige tagasi → OK. See sunnib täielikku ümberarvutust.
+          </div>
+        </div>
       </div>
-      <div class="callout tip">
-        <strong>💡 Still not updating?</strong> Go to <strong>Project Information</strong>, change the project start date to any other date, click OK, then change it back to the correct date and click OK again. This forces a full recalculation from scratch.
-      </div>
-    </section>
+    </article>
 
-    <!-- SUMMARY -->
+    <!-- KOKKUVÕTE -->
     <section class="summary">
-      <h2>Quick checklist</h2>
+      <div class="terminal-label">// kontrollnimekiri</div>
       <ul class="checklist">
-        <li>Created a new base calendar with correct working hours</li>
-        <li>Applied the calendar in Project Information</li>
-        <li>Set Default start time to match in File → Options → Schedule</li>
-        <li>Switched all tasks to Auto Scheduled</li>
-        <li>Pressed F9 to recalculate</li>
+        <li><span class="check">✓</span> Loodud uus baasikaender õigete tööaegadega</li>
+        <li><span class="check">✓</span> Kalender rakendatud jaotises „Projekti teave"</li>
+        <li><span class="check">✓</span> Vaikimisi algusaeg määratud jaotises Fail → Suvandid → Ajakava</li>
+        <li><span class="check">✓</span> Kõik ülesanded lülitatud automaatsele ajastamisele</li>
+        <li><span class="check">✓</span> F9 vajutatud ajakava ümberarvutamiseks</li>
       </ul>
     </section>
 
   </main>
 
   <footer>
-    <p>MS Project Custom Calendar Guide · Educational use only</p>
+    <span>MS Project juhend</span>
+    <span class="dot"></span>
+    <span>Ainult õppeotstarbel</span>
   </footer>
+
+  <script>
+    // Fade-in steps on scroll
+    const steps = document.querySelectorAll('.step, .intro, .summary');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    steps.forEach(s => obs.observe(s));
+  </script>
 
 </body>
 </html>
