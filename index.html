@@ -3,76 +3,129 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>What is Microsoft Project?</title>
+  <title>Custom Calendars in MS Project</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
   <header>
-    <h1>Microsoft Project</h1>
-    <p class="subtitle">A project management tool by Microsoft — explained simply.</p>
+    <p class="eyebrow">MS Project Guide</p>
+    <h1>How to Create and Apply a Custom Calendar</h1>
+    <p class="subtitle">Change working hours for your entire project — step by step.</p>
   </header>
 
   <main>
 
-    <section>
-      <h2>What is it?</h2>
-      <p>Microsoft Project is software that helps project managers plan work, assign resources, track progress, and manage budgets. First released in 1984, it is one of the most widely used PM tools in construction, IT, engineering, and government.</p>
+    <section class="intro">
+      <p>By default, MS Project schedules tasks using the <strong>Standard calendar</strong> — working hours from 8:00 to 17:00. If your project runs on different hours (an afternoon shift, a night shift, or a weekend schedule), you need to create a <strong>custom base calendar</strong> and apply it to the project. This guide walks through the full process.</p>
     </section>
 
-    <section>
-      <h2>Core features</h2>
-      <ul>
-        <li><strong>Gantt charts</strong> — visualise tasks as bars on a timeline with dependencies.</li>
-        <li><strong>Task dependencies</strong> — link tasks so date changes cascade automatically.</li>
-        <li><strong>Resource management</strong> — assign people, track costs, and resolve over-allocations.</li>
-        <li><strong>Critical path</strong> — highlights the task chain that controls the project end date.</li>
-        <li><strong>Baselines</strong> — save a snapshot and compare planned vs. actual progress.</li>
-        <li><strong>Microsoft 365 integration</strong> — connects with Teams, SharePoint, and Power BI.</li>
+    <!-- STEP 1 -->
+    <section class="step">
+      <div class="step-header">
+        <span class="step-number">1</span>
+        <h2>Open Change Working Time</h2>
+      </div>
+      <p>Go to the <strong>Project</strong> tab in the ribbon and click <strong>Change Working Time</strong>.</p>
+      <div class="screenshot-placeholder">
+        📷 Screenshot: Project tab → Change Working Time button highlighted
+      </div>
+    </section>
+
+    <!-- STEP 2 -->
+    <section class="step">
+      <div class="step-header">
+        <span class="step-number">2</span>
+        <h2>Create a new calendar</h2>
+      </div>
+      <p>In the dialog that opens, click <strong>Create New Calendar</strong>. Give it a clear name (e.g. <em>Afternoon Shift</em>) and choose <strong>Make a copy of Standard calendar</strong> so the base settings carry over.</p>
+      <div class="screenshot-placeholder">
+        📷 Screenshot: "Create New Calendar" dialog with name filled in
+      </div>
+    </section>
+
+    <!-- STEP 3 -->
+    <section class="step">
+      <div class="step-header">
+        <span class="step-number">3</span>
+        <h2>Set your working hours</h2>
+      </div>
+      <p>Still in the Change Working Time dialog, click the <strong>Work Weeks</strong> tab → select the default row → click <strong>Details</strong>. Select all working days (Monday through Friday), choose <strong>Set day(s) to these specific working times</strong>, and enter your hours — for example <strong>14:00 to 18:00</strong>. Click OK.</p>
+      <div class="screenshot-placeholder">
+        📷 Screenshot: Work Weeks → Details dialog with custom hours entered
+      </div>
+    </section>
+
+    <!-- STEP 4 -->
+    <section class="step">
+      <div class="step-header">
+        <span class="step-number">4</span>
+        <h2>Apply the calendar to the project</h2>
+      </div>
+      <p>Go to <strong>Project</strong> tab → <strong>Project Information</strong>. In the <strong>Calendar</strong> dropdown, select your new calendar. Click OK.</p>
+      <div class="screenshot-placeholder">
+        📷 Screenshot: Project Information dialog with custom calendar selected in dropdown
+      </div>
+    </section>
+
+    <!-- STEP 5 -->
+    <section class="step">
+      <div class="step-header">
+        <span class="step-number">5</span>
+        <h2>Set the default start time</h2>
+      </div>
+      <p>Go to <strong>File</strong> → <strong>Options</strong> → <strong>Schedule</strong>. Change <strong>Default start time</strong> to match your calendar (e.g. <strong>14:00</strong>). This must match the calendar or tasks may not align correctly.</p>
+      <div class="screenshot-placeholder">
+        📷 Screenshot: File → Options → Schedule tab with Default start time set to 14:00
+      </div>
+    </section>
+
+    <!-- STEP 6 -->
+    <section class="step">
+      <div class="step-header">
+        <span class="step-number">6</span>
+        <h2>Switch all tasks to Auto Scheduled</h2>
+      </div>
+      <p>This is the most common reason the calendar seems to have no effect. Select all tasks (<strong>Ctrl + A</strong>), then go to the <strong>Task</strong> tab and click <strong>Auto Schedule</strong>. Check the bottom status bar — it should say <em>"New Tasks: Auto Scheduled"</em>.</p>
+      <div class="screenshot-placeholder">
+        📷 Screenshot: Task tab → Auto Schedule button, and status bar showing "Auto Scheduled"
+      </div>
+      <div class="callout warning">
+        <strong>⚠ Common pitfall:</strong> If the status bar says <em>"Manually Scheduled"</em>, the tasks ignore all calendar and constraint logic entirely. Auto Schedule must be active for the calendar to take effect.
+      </div>
+    </section>
+
+    <!-- STEP 7 -->
+    <section class="step">
+      <div class="step-header">
+        <span class="step-number">7</span>
+        <h2>Recalculate the schedule</h2>
+      </div>
+      <p>Press <strong>F9</strong> or go to <strong>Project</strong> → <strong>Calculate Project</strong>. All tasks will be rescheduled according to the new calendar. Your tasks that previously started at 08:00 will now start at 14:00.</p>
+      <div class="screenshot-placeholder">
+        📷 Screenshot: Project tab → Calculate Project button, and Gantt chart showing updated start times
+      </div>
+      <div class="callout tip">
+        <strong>💡 Still not updating?</strong> Go to <strong>Project Information</strong>, change the project start date to any other date, click OK, then change it back to the correct date and click OK again. This forces a full recalculation from scratch.
+      </div>
+    </section>
+
+    <!-- SUMMARY -->
+    <section class="summary">
+      <h2>Quick checklist</h2>
+      <ul class="checklist">
+        <li>Created a new base calendar with correct working hours</li>
+        <li>Applied the calendar in Project Information</li>
+        <li>Set Default start time to match in File → Options → Schedule</li>
+        <li>Switched all tasks to Auto Scheduled</li>
+        <li>Pressed F9 to recalculate</li>
       </ul>
-    </section>
-
-    <section>
-      <h2>Versions</h2>
-      <table>
-        <thead>
-          <tr><th>Edition</th><th>Type</th><th>Best for</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Project Standard</td><td>Desktop</td><td>Individual PMs</td></tr>
-          <tr><td>Project Professional</td><td>Desktop</td><td>PMs with resource needs</td></tr>
-          <tr><td>Project Plan 1</td><td>Cloud</td><td>Simple web-based scheduling</td></tr>
-          <tr><td>Project Plan 3</td><td>Cloud + Desktop</td><td>Full-featured PM teams</td></tr>
-          <tr><td>Project Plan 5</td><td>Cloud + Desktop</td><td>Enterprise PMO</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section class="two-col">
-      <div>
-        <h2>Pros</h2>
-        <ul>
-          <li>Industry standard — widely recognised</li>
-          <li>Powerful scheduling and cost engine</li>
-          <li>Handles large, complex projects well</li>
-          <li>Deep Microsoft 365 ecosystem fit</li>
-        </ul>
-      </div>
-      <div>
-        <h2>Cons</h2>
-        <ul>
-          <li>Steep learning curve</li>
-          <li>Expensive at higher tiers</li>
-          <li>Desktop client is Windows-only</li>
-          <li>Overkill for small teams</li>
-        </ul>
-      </div>
     </section>
 
   </main>
 
   <footer>
-    <p>Educational overview · Not affiliated with Microsoft</p>
+    <p>MS Project Custom Calendar Guide · Educational use only</p>
   </footer>
 
 </body>
