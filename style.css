@@ -1,0 +1,82 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: Georgia, serif;
+  background: #f9f7f4;
+  color: #1a1a1a;
+  line-height: 1.7;
+}
+
+header {
+  background: #1c3a5e;
+  color: #fff;
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+header h1 { font-size: 2.4rem; margin-bottom: 0.5rem; }
+header .subtitle { color: #a8c4e0; font-size: 1.05rem; }
+
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: #1c3a5e;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 2px solid #d0e4f5;
+}
+
+p { margin-bottom: 0.75rem; }
+
+ul {
+  padding-left: 1.25rem;
+}
+
+ul li { margin-bottom: 0.4rem; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.92rem;
+}
+
+th {
+  background: #1c3a5e;
+  color: #fff;
+  text-align: left;
+  padding: 0.6rem 0.9rem;
+}
+
+td {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid #dde8f2;
+}
+
+tr:nth-child(even) td { background: #eef4fb; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+@media (max-width: 560px) {
+  .two-col { grid-template-columns: 1fr; }
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.82rem;
+  color: #888;
+  border-top: 1px solid #ddd;
+}
