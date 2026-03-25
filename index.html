@@ -12,6 +12,12 @@
 
   <div class="scanline"></div>
 
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <img src="" alt="" id="lightbox-img">
+  </div>
+
   <header>
     <div class="header-meta">
       <span class="tag"># ms-project</span>
@@ -47,7 +53,7 @@
         <p>Mine lindi ülaosas <strong>Projekt</strong>-vahekaardile ja klõpsa <strong>Muuda tööaega</strong> (<em>Change Working Time</em>).</p>
         <div class="screenshot-box">
           <span class="screenshot-label">// pilt_01.png</span>
-          <img src="step1.png" alt="Projekt → Muuda tööaega">
+          <img src="step1.png" alt="Projekt → Muuda tööaega" class="zoomable">
         </div>
       </div>
     </article>
@@ -62,8 +68,8 @@
         <h2>Loo uus kalender</h2>
         <p>Avanenud dialoogis klõpsa <strong>Loo uus kalender</strong> (<em>Create New Calendar</em>). Anna sellele selge nimi, nt <code>Pärastlõunane vahetus</code>, ja vali <strong>Koopia standardkalendrist</strong>, et põhiseaded säiliksid.</p>
         <div class="screenshot-box">
-          <span class="screenshot-label">// pilt_01.png</span>
-          <img src="step2.png" alt="Loo kalender">
+          <span class="screenshot-label">// pilt_02.png</span>
+          <img src="step2.png" alt="Loo kalender" class="zoomable">
         </div>
       </div>
     </article>
@@ -78,8 +84,8 @@
         <h2>Määra tööajad</h2>
         <p>Samas dialoogis klõpsa vahekaarti <strong>Töönädalad</strong> (<em>Work Weeks</em>) → vali vaikimisi rida → klõpsa <strong>Üksikasjad</strong> (<em>Details</em>). Vali kõik tööpäevad (E–R), vali <strong>Määra kindlad tööajad</strong> ja sisesta oma kellaaeg — nt <code>14:00 – 18:00</code>. Klõpsa OK.</p>
         <div class="screenshot-box">
-          <span class="screenshot-label">// pilt_01.png</span>
-          <img src="step3.png" alt="">
+          <span class="screenshot-label">// pilt_03.png</span>
+          <img src="step3.png" alt="Tööajad" class="zoomable">
         </div>
       </div>
     </article>
@@ -94,8 +100,8 @@
         <h2>Rakenda kalender projektile</h2>
         <p>Mine <strong>Projekt</strong>-vahekaardile → <strong>Projekti teave</strong> (<em>Project Information</em>). Leia <strong>Kalender</strong>-rippmenüü ja vali oma uus kalender. Klõpsa OK.</p>
         <div class="screenshot-box">
-          <span class="screenshot-label">// pilt_01.png</span>
-          <img src="step4.png" alt="Loo kalender">
+          <span class="screenshot-label">// pilt_04.png</span>
+          <img src="step4.png" alt="Projekti teave" class="zoomable">
         </div>
       </div>
     </article>
@@ -110,8 +116,8 @@
         <h2>Määra vaikimisi algusaeg</h2>
         <p>Mine <strong>Fail</strong> → <strong>Suvandid</strong> → <strong>Ajakava</strong> (<em>Schedule</em>). Muuda <strong>Vaikimisi algusaeg</strong> vastavaks — nt <code>14:00</code>. See peab ühtima sinu kalendriga, muidu ülesanded ei joandu õigesti.</p>
         <div class="screenshot-box">
-          <span class="screenshot-label">// pilt_01.png</span>
-          <img src="step5.png" alt="Loo kalender">
+          <span class="screenshot-label">// pilt_05.png</span>
+          <img src="step5.png" alt="Vaikimisi algusaeg" class="zoomable">
         </div>
       </div>
     </article>
@@ -126,8 +132,8 @@
         <h2>Lülita ülesanded automaatsele ajastamisele</h2>
         <p>See on kõige levinum põhjus, miks kalender ei toimi. Vali kõik ülesanded (<strong>Ctrl + A</strong>), mine <strong>Ülesanne</strong>-vahekaardile ja klõpsa <strong>Automaatne ajakava</strong> (<em>Auto Schedule</em>). Kontrolli alloleva olekuriba — seal peaks seisma <em>„Uued ülesanded: automaatne ajakava"</em>.</p>
         <div class="screenshot-box">
-          <span class="screenshot-label">// pilt_01.png</span>
-          <img src="step6.png" alt="Loo kalender">
+          <span class="screenshot-label">// pilt_06.png</span>
+          <img src="step6.png" alt="Auto Schedule" class="zoomable">
         </div>
         <div class="callout warning">
           <span class="callout-icon">⚠</span>
@@ -148,8 +154,8 @@
         <h2>Arvuta ajakava uuesti</h2>
         <p>Vajuta <strong>F9</strong> või mine <strong>Projekt</strong> → <strong>Arvuta projekt</strong> (<em>Calculate Project</em>). Kõik ülesanded arvutatakse ümber vastavalt uuele kalendrile — nt 08:00 asemel algavad ülesanded nüüd 14:00-st.</p>
         <div class="screenshot-box">
-          <span class="screenshot-label">// pilt_01.png</span>
-          <img src="step7.png" alt="Loo kalender">
+          <span class="screenshot-label">// pilt_07.png</span>
+          <img src="step7.png" alt="Arvuta projekt" class="zoomable">
         </div>
         <div class="callout tip">
           <span class="callout-icon">💡</span>
@@ -181,12 +187,34 @@
   </footer>
 
   <script>
-    // Fade-in steps on scroll
+    // Scroll fade-in
     const steps = document.querySelectorAll('.step, .intro, .summary');
     const obs = new IntersectionObserver(entries => {
       entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
     }, { threshold: 0.08 });
     steps.forEach(s => obs.observe(s));
+
+    // Lightbox
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
   </script>
 
 </body>
