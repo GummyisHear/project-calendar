@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagrammid ProjectLibre's</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600&family=Syne:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="scanline"></div>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox">
+    <button class="lightbox-close" id="lightbox-close">✕</button>
+    <img src="" alt="" id="lightbox-img">
+  </div>
+
+  <!-- NAV -->
+  <nav class="site-nav">
+    <div class="nav-inner">
+      <span class="nav-brand">// projektijuhend</span>
+      <div class="nav-links">
+        <a href="index.html" class="nav-link">Kalender</a>
+        <a href="diagramm.html" class="nav-link active">Diagrammid</a>
+      </div>
+    </div>
+  </nav>
+
+  <header>
+    <div class="header-meta">
+      <span class="tag"># projectlibre</span>
+      <span class="tag"># diagrammid</span>
+      <span class="tag"># gantt</span>
+    </div>
+    <h1>Diagrammid<br><span class="accent">ProjectLibre's</span></h1>
+    <p class="subtitle">Gantt-diagramm, ressursside diagramm ja võrgudiagramm — ülevaade ja samm-sammult juhend.</p>
+    <div class="header-bar">
+      <span>3 diagrammitüüpi</span>
+      <span class="dot"></span>
+      <span>~8 min</span>
+      <span class="dot"></span>
+      <span>ProjectLibre 1.x</span>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="intro">
+      <div class="terminal-label">// sissejuhatus</div>
+      <p>ProjectLibre pakub mitmeid visuaalseid tööriistu projekti planeerimiseks ja jälgimiseks. Peamised diagrammitüübid on <strong>Gantt-diagramm</strong> (ajakava visualiseerimine), <strong>ressursside diagramm</strong> (töökoormus inimeste ja vahendite kaupa) ning <strong>võrgudiagramm</strong> ehk PERT-diagramm (ülesannete sõltuvuste kaardistamine). Kõik vaated on kättesaadavad menüüst <code>View</code>.</p>
+    </section>
+
+    <!-- JAOTIS: GANTT -->
+    <section class="section-header">
+      <div class="terminal-label">// diagrammitüüp_01</div>
+      <h2 class="section-title">Gantt-diagramm</h2>
+      <p class="section-desc">Gantt-diagramm on projektijuhtimise kõige levinum tööriist. See näitab ülesandeid ajajoonel — kes mida teeb, millal algab ja millal lõpeb, ning millised ülesanded sõltuvad teistest.</p>
+    </section>
+
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">01</span>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h2>Ava Gantt-vaade</h2>
+        <p>Mine <strong>View</strong> → <strong>Gantt Chart</strong>. Ekraani vasakul poolel on ülesannete tabel, paremal pool graafiline ajaskaala ribadena.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// gantt_01 — View → Gantt Chart</span>
+          <div class="screenshot-placeholder">
+            <span class="ph-icon">📊</span>
+            <span>View → Gantt Chart</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">02</span>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h2>Lisa ülesanded</h2>
+        <p>Klõpsa tühjal real vasakpoolses tabelis ja sisesta ülesande nimi veergu <strong>Name</strong>. Täida ka <strong>Duration</strong> (kestus, nt <code>3d</code> = 3 päeva), <strong>Start</strong> (algus) ja <strong>Finish</strong> (lõpp). Eeldusel, et kasutad kohandatud kalendrit, arvestab ProjectLibre automaatselt sinu seadistatud tööaegu.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// gantt_02 — ülesannete sisestamine</span>
+          <div class="screenshot-placeholder">
+            <span class="ph-icon">✏️</span>
+            <span>Name · Duration · Start · Finish</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">03</span>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h2>Määra ülesannete sõltuvused</h2>
+        <p>Ülesannete järjestuse loomiseks klõpsa veeru <strong>Predecessors</strong> lahtris ja sisesta eelneva ülesande reanumber (nt <code>2</code>). Gantt-diagrammil ilmub noolte graafiline seos kahe riba vahele. Vaikimisi on sõltuvuse tüüp <strong>Finish-to-Start</strong> (FS) — ülesanne B algab siis, kui ülesanne A lõpeb.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// gantt_03 — sõltuvuste lisamine</span>
+          <div class="screenshot-placeholder">
+            <span class="ph-icon">🔗</span>
+            <span>Predecessors → reanumber</span>
+          </div>
+        </div>
+        <div class="callout tip">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>Sõltuvusetüübid:</strong> Saad sisestada <code>2FS</code> (Finish-to-Start), <code>2SS</code> (Start-to-Start), <code>2FF</code> (Finish-to-Finish) või <code>2SF</code> (Start-to-Finish). Kõige levinum on <code>FS</code>.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">04</span>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h2>Määra ressursid ülesannetele</h2>
+        <p>Klõpsa ülesandel topelt, et avada <strong>Task Information</strong> dialoog. Mine vahekaardile <strong>Resources</strong>. Vali ressursi nimi rippmenüüst (ressursid tuleb esmalt lisada — vt ressursi-juhend allpool). Saad määrata ka ressursi koormuse (Units), nt <code>50%</code> osaajaga töö jaoks.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// gantt_04 — ressursside määramine</span>
+          <div class="screenshot-placeholder">
+            <span class="ph-icon">👤</span>
+            <span>Task Information → Resources</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">05</span>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h2>Salvesta ja ekspordi Gantt-diagramm</h2>
+        <p>Mine <strong>File</strong> → <strong>Save</strong>, et salvestada projektifail (<code>.pod</code> formaat). Diagrammi visuaali eksportimiseks vali <strong>File</strong> → <strong>Print</strong> → <strong>Print Preview</strong>, kus saad ka PDF-i eksportida. Alternatiivina võid teha ekraanitõmmise (<em>screenshot</em>) kujunduse jagamiseks.</p>
+        <div class="callout warning">
+          <span class="callout-icon">⚠</span>
+          <div>
+            <strong>NB!</strong> ProjectLibre salvestab faili <code>.pod</code> formaadis, mis ei ole otse ühilduv MS Projecti <code>.mpp</code> failiga. Vajadusel ekspordi <code>.mpx</code> formaadis kokkusobivuse tagamiseks.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- JAOTIS: RESSURSID -->
+    <section class="section-header">
+      <div class="terminal-label">// diagrammitüüp_02</div>
+      <h2 class="section-title">Ressursside diagramm</h2>
+      <p class="section-desc">Ressursside diagramm (Resource Graph) näitab graafiliselt, kui palju tööaega iga inimene või vahend projekti vältel kasutab. Aitab tuvastada ülekoormust (punane ribadena) ja ressursside ebatõhusat kasutamist.</p>
+    </section>
+
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">01</span>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h2>Lisa ressursid projekti</h2>
+        <p>Mine <strong>View</strong> → <strong>Resource Sheet</strong>. Sisesta iga ressursi nimi (nt töötaja nimi), tüüp (<strong>Work</strong> inimeste jaoks, <strong>Material</strong> materjalide jaoks) ja maksimaalne saadavus (<strong>Max Units</strong>, vaikimisi <code>100%</code>).</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// ressurss_01 — View → Resource Sheet</span>
+          <div class="screenshot-placeholder">
+            <span class="ph-icon">👥</span>
+            <span>Resource Sheet → nimi · tüüp · Max Units</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">02</span>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h2>Ava ressursside diagramm</h2>
+        <p>Mine <strong>View</strong> → <strong>Resource Graph</strong>. Ekraanil kuvatakse tulpdiagramm, mis näitab valitud ressursi töökoormust ajas. Punased tulbad tähistavad ülekoormust (üle 100%). Saad ressurssi vahetada, klõpsates nimekirjas vasakul allosas.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// ressurss_02 — View → Resource Graph</span>
+          <div class="screenshot-placeholder">
+            <span class="ph-icon">📈</span>
+            <span>Resource Graph — töökoormus ajas</span>
+          </div>
+        </div>
+        <div class="callout tip">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>Ülekoormuse lahendamine:</strong> Kui ressurss on üle koormatud, proovi pikendada ülesande kestust, vähendada ressursi osalusprotsenti (Units) või nihutada ülesannet ajas.
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- JAOTIS: VÕRGUDIAGRAMM -->
+    <section class="section-header">
+      <div class="terminal-label">// diagrammitüüp_03</div>
+      <h2 class="section-title">Võrgudiagramm (PERT)</h2>
+      <p class="section-desc">Võrgudiagramm ehk PERT-diagramm kujutab ülesandeid kastidena ja nende vahelisi sõltuvusi nooltena. See on eriti kasulik kriitilise tee (<em>critical path</em>) visualiseerimiseks — millised ülesanded ei tohi hilineda, et projekt lõpeks õigeaegselt.</p>
+    </section>
+
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">01</span>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h2>Ava võrgudiagrammi vaade</h2>
+        <p>Mine <strong>View</strong> → <strong>Network Diagram</strong>. Ekraanil kuvatakse kõik ülesanded kastidena, mis on ühendatud nooltega vastavalt Predecessors-veeru sõltuvustele. Kriitilisel teel olevad ülesanded on tavaliselt esile tõstetud.</p>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// pert_01 — View → Network Diagram</span>
+          <div class="screenshot-placeholder">
+            <span class="ph-icon">🕸️</span>
+            <span>Network Diagram — kastid + nooled</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <article class="step">
+      <div class="step-aside">
+        <span class="step-num">02</span>
+        <div class="step-line"></div>
+      </div>
+      <div class="step-content">
+        <h2>Loe võrgudiagrammi</h2>
+        <p>Iga kast sisaldab ülesande nime, numbrit, kestust ning varajast ja hilist algus-/lõppaega. Nooled näitavad sõltuvuse suunda. Punaselt tähistatud kastid kuuluvad <strong>kriitilisele teele</strong> — nende hilinemisel hilineb ka kogu projekt.</p>
+        <div class="callout tip">
+          <span class="callout-icon">💡</span>
+          <div>
+            <strong>Kriitiline tee:</strong> Kriitilisel teel oleval ülesandel on varu (<em>Total Float</em>) = 0 päeva. See tähendab, et ükskõik milline hilinemine selles ülesandes pikendab projekti lõppkuupäeva.
+          </div>
+        </div>
+        <div class="screenshot-box">
+          <span class="screenshot-label">// pert_02 — kriitilise tee lugemine</span>
+          <div class="screenshot-placeholder">
+            <span class="ph-icon">🔴</span>
+            <span>Punased kastid = kriitiline tee</span>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <!-- KOKKUVÕTE -->
+    <section class="summary">
+      <div class="terminal-label">// kontrollnimekiri</div>
+      <ul class="checklist">
+        <li><span class="check">✓</span> Gantt-diagramm avatud View → Gantt Chart alt</li>
+        <li><span class="check">✓</span> Ülesanded sisestatud nimede, kestuste ja kuupäevadega</li>
+        <li><span class="check">✓</span> Sõltuvused määratud Predecessors-veeru kaudu</li>
+        <li><span class="check">✓</span> Ressursid lisatud Resource Sheet'is</li>
+        <li><span class="check">✓</span> Ressursside diagramm kontrollitud ülekoormuse suhtes</li>
+        <li><span class="check">✓</span> Võrgudiagrammis leitud kriitiline tee</li>
+      </ul>
+    </section>
+
+    <div class="nav-footer-links">
+      <a href="index.html" class="nav-cta">← Tagasi: Kalender ProjectLibre's</a>
+    </div>
+
+  </main>
+
+  <footer>
+    <span>ProjectLibre juhend</span>
+    <span class="dot"></span>
+    <span>Artjom Põldsaar 2026</span>
+  </footer>
+
+  <script>
+    const steps = document.querySelectorAll('.step, .intro, .summary, .section-header');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    steps.forEach(s => obs.observe(s));
+
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    document.querySelectorAll('.zoomable').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+    document.getElementById('lightbox-close').addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeLightbox(); });
+  </script>
+
+</body>
+</html>
