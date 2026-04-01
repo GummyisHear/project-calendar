@@ -42,6 +42,63 @@ body {
   );
 }
 
+/* ── NAV ── */
+.site-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(14, 17, 23, 0.92);
+  border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.nav-inner {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.nav-brand {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.nav-links {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.nav-link {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-decoration: none;
+  padding: 0.35rem 0.75rem;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: color 0.15s, border-color 0.15s, background 0.15s;
+}
+
+.nav-link:hover {
+  color: var(--text);
+  background: rgba(61, 220, 132, 0.05);
+  border-color: var(--border);
+}
+
+.nav-link.active {
+  color: var(--green);
+  border-color: var(--green-dim);
+  background: rgba(61, 220, 132, 0.06);
+}
+
 /* ── LIGHTBOX ── */
 .lightbox {
   position: fixed;
@@ -174,6 +231,34 @@ main {
   letter-spacing: 0.05em;
 }
 
+/* ── SECTION HEADERS (diagrammide leht) ── */
+.section-header {
+  margin: 3.5rem 0 2rem;
+  padding: 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--green);
+  border-radius: 0 8px 8px 0;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.section-header.visible { opacity: 1; transform: none; }
+
+.section-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #e8edf2;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.01em;
+}
+
+.section-desc {
+  color: var(--muted);
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
 /* ── INTRO ── */
 .intro {
   margin-bottom: 3rem;
@@ -253,6 +338,20 @@ code {
   border: 1px solid var(--border);
 }
 
+/* ── INLINE LIST ── */
+.inline-list {
+  list-style: none;
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.9rem;
+}
+
+.inline-list li {
+  display: flex;
+  align-items: center;
+}
+
 /* ── SCREENSHOT BOX ── */
 .screenshot-box {
   background: var(--surface);
@@ -276,6 +375,28 @@ code {
   border-radius: 4px;
   display: block;
   border: 1px solid var(--border);
+}
+
+/* ── SCREENSHOT PLACEHOLDER ── */
+.screenshot-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 2rem 1rem;
+  border: 1px dashed var(--green-dim);
+  border-radius: 6px;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8rem;
+  background: rgba(61, 220, 132, 0.02);
+  text-align: center;
+}
+
+.ph-icon {
+  font-size: 2rem;
+  opacity: 0.5;
 }
 
 /* zoomable cursor + hover hint */
@@ -348,6 +469,30 @@ img.zoomable:hover {
   flex-shrink: 0;
 }
 
+/* ── NAV FOOTER LINKS ── */
+.nav-footer-links {
+  margin-top: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.nav-cta {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.82rem;
+  color: var(--green);
+  text-decoration: none;
+  border: 1px solid var(--green-dim);
+  padding: 0.55rem 1.1rem;
+  border-radius: 6px;
+  background: rgba(61, 220, 132, 0.05);
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.nav-cta:hover {
+  background: rgba(61, 220, 132, 0.1);
+  border-color: var(--green);
+}
+
 /* ── FOOTER ── */
 footer {
   border-top: 1px solid var(--border);
@@ -365,7 +510,9 @@ footer {
 /* ── RESPONSIVE ── */
 @media (max-width: 560px) {
   header, main, footer { padding-left: 1.25rem; padding-right: 1.25rem; }
+  .nav-inner { padding-left: 1.25rem; padding-right: 1.25rem; }
   .step { grid-template-columns: 44px 1fr; gap: 0 1rem; }
   .step-num { width: 34px; height: 34px; font-size: 0.7rem; }
   .lightbox { padding: 1rem; }
+  .nav-footer-links { justify-content: flex-start; }
 }
