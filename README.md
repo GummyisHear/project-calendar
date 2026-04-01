@@ -31,7 +31,7 @@ ProjectLibre on tasuta ja avatud lähtekoodiga alternatiiv MS Projectile.[^3]
 
 ### Avalehekülg — Kalender
 
-![ProjectLibre kalendri juhendi leht](screenshot-kalender.png)
+![ProjectLibre kalendri juhendi leht](screenshot-kalender2.png)
 
 *Kohandatud kalendri loomise samm-sammuline juhend ProjectLibre's.*
 
